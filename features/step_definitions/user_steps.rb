@@ -4,17 +4,25 @@ end
 
 Given /^I have one\s+user "([^\"]*)" with password "([^\"]*)"$/ do |email, password|
   User.new(:name => email.split('@').first,
-           :email => email,
-           :password => password,
-           :password_confirmation => password).save!
+    :email => email,
+    :password => password,
+    :password_confirmation => password).save!
 end
 
 Given /^I have one\s+social worker "([^\"]*)" with password "([^\"]*)"$/ do |email, password|
   User.new(:name => email.split('@').first,
-           :email => email,
-           :password => password,
-           :password_confirmation => password,
-           :social_worker => true).save!
+    :email => email,
+    :password => password,
+    :password_confirmation => password,
+    :social_worker => true).save!
+end
+
+Given /^I have one\s+supporter "([^\"]*)" with password "([^\"]*)"$/ do |email, password|
+  User.create!(:name => email.split('@').first,
+    :email => email,
+    :password => password,
+    :password_confirmation => password,
+    :supporter => true)
 end
 
 Given /^a logged in user "([^\"]*)" with password "([^\"]*)"$/ do |email, password|
