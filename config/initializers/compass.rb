@@ -5,7 +5,14 @@ Compass.configuration.environment = Rails.env.to_sym
 Compass.configure_sass_plugin!
 Sass::Plugin.options[:never_update] = false
 
-# Make stylesheets compile to tmp
-require "fileutils"
-FileUtils.mkdir_p(Rails.root.join("tmp", "stylesheets", "compiled"))
-Rails.application.config.middleware.use(Rack::Static, :root => "tmp/", :urls => ["/stylesheets/compiled"])
+Sass::Plugin.options.merge!(
+  :template_location => 'public/stylesheets/sass',
+  :css_location => 'tmp/stylesheets'
+)
+
+Rails.configuration.middleware.delete('Sass::Plugin::Rack')
+Rails.configuration.middleware.insert_before('Rack::Sendfile', 'Sass::Plugin::Rack')
+
+Rails.configuration.middleware.insert_before('Rack::Sendfile', 'Rack::Static',
+    :urls => ['/stylesheets'],
+    :root => "#{Rails.root}/tmp")
