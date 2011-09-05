@@ -1,0 +1,9 @@
+%h1 News from your Karis Kids family
+
+- current_user.donor_family.comments.each do |comment|
+  %h2= comment.title
+  %p
+    %b
+      = distance_of_time_in_words_to_now(comment.created_at)
+      ago
+    = comment.comment

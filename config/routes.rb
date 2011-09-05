@@ -1,4 +1,6 @@
 Cfi::Application.routes.draw do
+  resources :link_families, :only => :index
+
   resources :households
 
   devise_for :users

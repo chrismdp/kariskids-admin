@@ -126,6 +126,11 @@ GEM
       json (>= 1.4.6)
     googlecharts (1.6.7)
     haml (3.1.2)
+    haml-rails (0.3.4)
+      actionpack (~> 3.0)
+      activesupport (~> 3.0)
+      haml (~> 3.0)
+      railties (~> 3.0)
     has_scope (0.5.0)
     heroku (2.3.6)
       launchy (>= 0.3.2)
@@ -295,6 +300,7 @@ DEPENDENCIES
   formtastic
   googlecharts
   haml
+  haml-rails
   heroku_san (= 1.0.2)
   inherited_resources (= 1.1.2)
   jasmine

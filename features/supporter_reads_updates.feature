@@ -6,6 +6,8 @@ I want to log into the service and be able to read updates about my family, with
 Scenario: Supporter reads updates
   Given I am logged in as a supporter called "Simon"
   Then I am able to view updates from my link family
+  And I cannot access the rest of the site
+  And I cannot read private notes
 
 Scenario: Supporter receives email from family
 Scenario: Supporter cannot see 'private' notes

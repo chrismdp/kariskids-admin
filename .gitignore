@@ -9,3 +9,4 @@ capybara-*
 .bundle
 public/system/*
 clean/*
+.sass-cache

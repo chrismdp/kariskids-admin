@@ -4,6 +4,7 @@ class Household < ActiveRecord::Base
   default_scope :order => "caretaker asc"
   
   has_many :people
+  belongs_to :link_family_contact, :class_name => "User"
   
   acts_as_commentable
 

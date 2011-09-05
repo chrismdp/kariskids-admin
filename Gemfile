@@ -7,6 +7,7 @@ gem 'configurable_engine'
 gem 'paginate_alphabetically', git: 'git://github.com/edendevelopment/paginate_alphabetically.git', branch: 'bundler'
 
 gem 'haml'
+gem 'haml-rails'
 gem 'compass'
 
 gem 'inherited_resources', '1.1.2'

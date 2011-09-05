@@ -6,6 +6,8 @@ class User < ActiveRecord::Base
 
   validates_presence_of :name
 
+  has_one :donor_family, :class_name => "Household", :foreign_key => :link_family_contact_id
+
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :password, :password_confirmation, :name, :social_worker, :supporter
 
